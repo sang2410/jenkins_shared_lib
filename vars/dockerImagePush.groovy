@@ -1,5 +1,5 @@
 def call(String project, String ImageTag, String hubUser){
-   withDockerRegistry(credentialsId: 'docker-hub-cred', url: 'https://hub.docker.com/repository/docker/nguyenchisang/blog/general') {
+   withDockerRegistry(credentialsId: 'docker-hub', url: 'https://hub.docker.com/repository/docker/nguyenchisang/blog/general') {
     sh "docker image push ${hubUser}/${project}:${ImageTag}"
     sh "docker image push ${hubUser}/${project}:latest" 
 } 
